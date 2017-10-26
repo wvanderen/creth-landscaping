@@ -2,6 +2,7 @@ source 'https://rubygems.org'
  
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '4.2.5'
+
  
  group :production do
    gem 'pg'
@@ -13,10 +14,9 @@ source 'https://rubygems.org'
    gem 'web-console', '~> 2.0'
  end
  
- gem 'sass-rails', '~> 5.0'
+
  gem 'uglifier', '>= 1.3.0'
  gem 'coffee-rails', '~> 4.1.0'
- gem 'jquery-rails'
  gem 'turbolinks'
  gem 'bootstrap'
  gem 'figaro'
@@ -30,3 +30,8 @@ source 'https://rubygems.org'
    gem 'factory_girl_rails'
    gem 'pry-rails'
  end
+
+gem 'jquery-rails' 
+gem 'sprockets-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'

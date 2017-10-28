@@ -32,6 +32,6 @@ source 'https://rubygems.org'
  end
 
 gem 'jquery-rails' 
-gem 'sprockets-rails'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'

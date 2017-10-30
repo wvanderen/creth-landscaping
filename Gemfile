@@ -19,6 +19,7 @@ source 'https://rubygems.org'
  gem 'uglifier', '>= 1.3.0'
  gem 'coffee-rails', '~> 4.1.0'
  gem 'turbolinks'
+ gem 'bootstrap'
  gem 'figaro'
 
  group :development, :test do
@@ -33,6 +34,6 @@ source 'https://rubygems.org'
 
 gem 'jquery-rails' 
 gem 'sprockets-rails'
-gem 'bootstrap-sass'
-gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
 gem 'devise'

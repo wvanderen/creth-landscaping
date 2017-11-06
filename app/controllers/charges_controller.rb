@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   before_action :amount_to_be_charged
   
+  
   def new
     @stripe_btn_data = {
       key: "#{ ENV['STRIPE_PUBLISHABLE_KEY'] }",
@@ -26,8 +27,7 @@ class ChargesController < ApplicationController
    )
  
    flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
-   @user = current_user
-   @user.role = :premium
+   current_user.premium!
    redirect_to welcome_index_path
  
    # Stripe will send back CardErrors, with friendly messages

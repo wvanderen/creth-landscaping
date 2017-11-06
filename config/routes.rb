@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
-  resources :wikis
-
+  resources :wikis  
   devise_for :users
+  
+  resources :users do
+    collection do
+      get :downgrade
+    end
+  end
+  
   patch '/user/confirmation' => 'user/confirmations#update', :via => :patch, :as => :update_user_confirmation
-  resources :users
   get 'welcome/index'
 
   get 'welcome/about'

@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  def show
-  end
-
-  def edit
-  end
+    def downgrade
+        current_user.standard!
+    end
 end

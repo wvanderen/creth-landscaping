@@ -12,4 +12,8 @@ module ApplicationHelper
     def is_standard?
         true if current_user && current_user.standard?
     end
+    
+    def downgrade_user
+        current_user.standard!
+    end
 end

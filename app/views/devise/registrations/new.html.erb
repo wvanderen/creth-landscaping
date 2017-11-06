@@ -1,7 +1,5 @@
-<h2>Sign up, you cow!</h2>
+<h2>Sign up</h2>
 
-<div class="row">
-    <div class="col-md-8 form">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -28,6 +26,4 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
-  </div>
-</div>
+<%= render "devise/shared/links" %>

@@ -11,4 +11,8 @@ module WikisHelper
     def user_is_authorized_for_delete?(wiki)
         current_user == wiki.user || is_an_admin?
     end
+    
+    def is_premium?
+        true if current_user && current_user.premium?
+    end
 end

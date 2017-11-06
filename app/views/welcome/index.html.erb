@@ -1,2 +1,8 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
+         <% if current_user.standard? %>
+            <p><%= link_to "Upgrade to Premium!", new_charge_path, :class => 'navbar-link' %></p>
+         <% end %>
+         <% if is_premium? %>
+            <p><%= link_to "Downgrade to Standard", :class => 'navbar-link' %></p>
+         <% end %>

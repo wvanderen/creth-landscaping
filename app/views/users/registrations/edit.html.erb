@@ -46,5 +46,5 @@
 <h3>Downgrade to Standard</h3>
 
 <p>I'm not sure why you would ever want to do this since you've already paid the signup fee...</p>
-<%= button_to "Downgrade account", data: { confirm: "Are you sure?" }, method: downgrade_user %>
+<%= button_to "Downgrade account", data: { confirm:  "Are you sure? This will revert all the private wikis you have authored to public" }, method: downgrade_user %>
 <% end %>

@@ -1,3 +1,4 @@
+ <% if !wiki.private || (current_user && (current_user.premium? || current_user.admin?)) %>
  <div class="media">
    <div class="media-body">
      <h4 class="media-heading">
@@ -7,3 +8,4 @@
        submitted <%= time_ago_in_words(wiki.created_at) %> ago by <%= wiki.user.email %> <br>
      </small>
    </div>
+ <% end %>

@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :downgrade
+      get :upgrade
     end
   end
+  
+  # get 'users/:id/wikis' => 'users#wikis', as => :user_wikis
   
   patch '/user/confirmation' => 'user/confirmations#update', :via => :patch, :as => :update_user_confirmation
   get 'welcome/index'

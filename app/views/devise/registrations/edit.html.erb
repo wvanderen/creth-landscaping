@@ -36,17 +36,17 @@
   </div>
 <% end %>
 
-<h3>Cancel my account.</h3>
+<h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
 
 <% if is_premium? %>
-<h3>Downgrade to Standard</h3>
+<h3>Downgrade to standard account</h3>
 
 <p>I'm not sure why you would ever want to do this since you've already paid the signup fee...</p>
 <div class="button">
-  <%= link_to "Downgrade", downgrade_users_path %>
+  <%= button_to "Downgrade", downgrade_users_path, data: { confirm: "Are you sure? All of the private wikis you have authored will revert to public status if you do this." } %>
 </div>
 <% end %>

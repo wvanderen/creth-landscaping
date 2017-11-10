@@ -3,7 +3,7 @@ class WikisController < ApplicationController
   #authorize_user, except: [:index, :show]
   
   def index
-    @wikis = Wiki.all
+    @wikis = policy_scope(WIki)
   end
   
   def show

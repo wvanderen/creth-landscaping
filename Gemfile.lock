@@ -189,6 +189,9 @@ GEM
     shoulda-context (1.2.2)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     sinatra (1.4.8)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -253,6 +256,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 3.2)
   shoulda
+  simple_form
   spring
   sprockets-rails
   sqlite3

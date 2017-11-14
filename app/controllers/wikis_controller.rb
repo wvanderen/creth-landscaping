@@ -3,7 +3,7 @@ class WikisController < ApplicationController
   #authorize_user, except: [:index, :show]
   
   def index
-    @wikis = policy_scope(WIki)
+    @wikis = policy_scope(Wiki)
   end
   
   def show
@@ -12,6 +12,8 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    @collaborators = @wiki.collaborators.build
+    
   end
   
   def create
@@ -55,9 +57,14 @@ class WikisController < ApplicationController
     end
   end
   
+  def add_collaborator
+    @wiki.collaborators << @collaborator
+  end
+  
   private
   
   def wiki_params
-    params.require(:wiki).permit(:title, :body, :private)
+    params.require(:wiki).permit(:title, :body, :private, :collaborators)
   end
+  
 end

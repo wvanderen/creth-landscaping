@@ -23,9 +23,7 @@
         <% if current_user && current_user.standard? %>
             <li><%= link_to "Upgrade to Premium!", new_charge_path, :class => 'navbar-link' %></li>
          <% end %>
-         <% if is_premium? %>
-            <li><%= link_to "Downgrade to Standard", edit_user_registration_path, :class => 'navbar-link' %></li>
-         <% end %>
+         <li><%= link_to "Wikis", wikis_path , :class => 'navbar-link' %></li>
     </ul>
   </div>
 

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
     def downgrade
-    
         @user = current_user
         @wikis = @user.wikis
         @wikis.each do |wiki|

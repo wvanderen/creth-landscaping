@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :downgrade
+      post :downgrade 
       get :upgrade
     end
   end

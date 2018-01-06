@@ -7,10 +7,6 @@ module ApplicationHelper
         content_tag :div, capture(&block), class: css_class
     end
     
-    def is_premium?
-        true if current_user && current_user.premium?
-    end
-    
     def is_standard?
         true if current_user && current_user.standard?
     end

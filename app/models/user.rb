@@ -1,9 +1,6 @@
 class User < ActiveRecord::Base
   require 'bcrypt'
-  has_many :collaborators
-  has_many :wikis, through: :collaborators
-  accepts_nested_attributes_for :collaborators
-  accepts_nested_attributes_for :wikis
+  has_many :jobs
   
   before_save {self.email = email.downcase }
   before_save {self.role ||= :standard }
@@ -16,23 +13,12 @@ class User < ActiveRecord::Base
   
   #has_secure_password
   
-  enum role: [:standard, :premium, :admin]
+  enum role: [:standard, :admin]
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
 
-  def upgrade
-    self.role = :premium
-  end
-  
-  def collaborators
-    Collaborator.where(user_id: id)
-  end
-  
-  def wikis
-    collaborators.wikis
-  end
 end

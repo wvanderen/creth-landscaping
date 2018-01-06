@@ -42,9 +42,3 @@
 
 <%= link_to "Back", :back %>
 
-<% if is_premium? %>
-<h3>Downgrade to Standard</h3>
-
-<p>I'm not sure why you would ever want to do this since you've already paid the signup fee...</p>
-<%= link_to "Downgrade account", data: { confirm:  "Are you sure? This will revert all the private wikis you have authored to public" }, downgrade_users_path %>
-<% end %>

@@ -16,7 +16,7 @@
          all_jobs = scope.all
          jobs = []
          all_jobs.each do |job|
-           if jobs.users.include?(user)
+           if job.user == @user
              jobs << job # only show standard users their jobs
            end
          end

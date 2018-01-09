@@ -9,23 +9,30 @@ require 'random_data'
     users = User.all
 
 50.times do
-    wiki = Wiki.create!(
+    job = Job.create!(
         user: users.sample,
-        title: (Faker::GameOfThrones.character + Faker::GameOfThrones.dragon),
-        body: (Faker::RickAndMorty.quote + Faker::RickAndMorty.character)
+        address: (Faker::Address.street_address + Faker::Address.zip),
+        yardsize: rand(100..5000),
+        date: Faker::Date.forward(40),
+        specialrequests: Faker::HarryPotter.quote,
+        stripes: Faker::Boolean.boolean,
+        grasstreated: Faker::Boolean.boolean,
+        mulching: Faker::Boolean.boolean,
+        mulchexisting: Faker::Boolean.boolean,
+        newbushestrees: Faker::Boolean.boolean,
+        rate: rand(50..500),
+        status: rand(0..2),
+        paid: Faker::Boolean.boolean,
+        notes: Faker::HarryPotter.character
         )
         
-        wiki.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+        job.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
 end
 
-wikis = Wiki.all
+jobs = Job.all
 
 
-Wiki.find_or_create_by(
-    title: "Unique Title",
-    body: "Unique Body"
-    )
 
 puts "Seed finished"
 puts "#{User.count} users created"
-puts "#{Wiki.count} wikis created"
+puts "#{Job.count} jobs created"

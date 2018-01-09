@@ -1,0 +1,70 @@
+ <%= simple_form_for job do |f| %>
+    <% if job.errors.any? %>
+       <div class="alert alert-danger">
+           <h4><%= pluralize(job.errors.count, "error") %>.</h4>
+           <ul>
+               <% job.errors.full_messages.each do |msg| %>
+                   <li><%= msg %></li>
+                <% end %>
+           </ul>
+       </div>
+    <% end %>
+    <%= form_group_tag(job.errors[:address]) do %>
+        <%= f.label :address, "Address" %>
+        <%= f.text_field :address, class: 'form-control', placeholder: "Enter your full address." %>
+    <% end %>
+    <%= form_group_tag(job.errors[:yardsize]) do %>
+        <%= f.label :yardsize, "Size of Yard" %>
+        <%= f.number_field :yardsize, class: 'form-control', placeholder: "Enter your the approximate size of the yard we'll be treating in square feet." %>
+   <% end %>
+       <%= form_group_tag(job.errors[:date]) do %>
+        <%= f.label :date, "Preferred Date" %>
+        <%= f.date_field :date, class: 'form-control', placeholder: "Enter your requested date here." %>
+   <% end %>
+    <%= form_group_tag(job.errors[:specialrequests]) do %>
+        <%= f.label :specialrequests, "Any Special Requests?" %>
+        <%= f.text_field :specialrequests, class: 'form-control', placeholder: "If you have any special requests, enter them here." %>
+   <% end %>
+    <%= form_group_tag(job.errors[:stripes]) do %>
+        <%= f.label :stripes, "Do you want stripes?" %>
+        <%= f.check_box :stripes, class: 'form-control' %>
+   <% end %>
+    <%= form_group_tag(job.errors[:grasstreated]) do %>
+        <%= f.label :grasstreated, "Would you like your grass treated?" %>
+        <%= f.check_box :grasstreated, class: 'form-control' %>
+   <% end %>
+    <%= form_group_tag(job.errors[:mulching]) do %>
+        <%= f.label :mulching, "Do you need mulching?" %>
+        <%= f.check_box :mulching, class: 'form-control' %>
+   <% end %>
+   <p>If you didn't select the mulching option, you can ignore the questions below.</p>
+    <%= form_group_tag(job.errors[:mulchexisting]) do %>
+        <%= f.label :mulchexisting, "Do you already have a mulch bed?" %>
+        <%= f.check_box :mulchexisting, class: 'form-control' %>
+   <% end %>
+    <%= form_group_tag(job.errors[:newbushestrees]) do %>
+        <%= f.label :newbushestrees, "Do you want any new bushes or trees?" %>
+        <%= f.check_box :newbushestrees, class: 'form-control' %>
+   <% end %>
+   <% if current_user.admin?  %>
+        <%= form_group_tag(job.errors[:rate]) do %>
+            <%= f.label :rate, "Price" %>
+            <%= f.number_field :rate, class: 'form-control', placeholder: "Enter the price for this job." %>
+       <% end %>
+        <%= form_group_tag(job.errors[:status]) do %>
+            <%= f.label :status, "Status" %>
+            <%= f.select :status, ['requested', 'quoted', 'complete'] %>
+       <% end %>
+       <%= form_group_tag(job.errors[:paid]) do %>
+            <%= f.label :paid, "Paid?" %>
+            <%= f.check_box :paid, class: 'form-control' %>
+       <% end %>
+       <%= form_group_tag(job.errors[:notes]) do %>
+            <%= f.label :notes, "Notes"%>
+            <%= f.text_field :notes, class: 'form-control', placeholder: "Notes for staff reference." %>
+       <% end %>
+    <% end %>
+   <div class="form-group">
+     <%= f.submit "Save", class: 'btn btn-success' %>
+   </div>
+<% end %>

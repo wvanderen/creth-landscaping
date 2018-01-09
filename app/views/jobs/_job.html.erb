@@ -1,0 +1,9 @@
+ <div class="media">
+   <div class="media-body">
+     <h4 class="media-heading">
+       <%= link_to job.id, job_path(job) %>
+     </h4>
+     <small>
+       submitted <%= time_ago_in_words(job.created_at) %> ago by <%= job.user.email %> <br>
+     </small>
+   </div>

@@ -1,3 +1,53 @@
 
+.wrapper {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #A5E4FF;
+}
+
+.container {
+    background-color: #98BC5E;
+    max-width: 100%;
+    margin-bottom: 0px;
+}
+
+.container > li {
+    color: black;
+    background-color: #98BC5E;
+}
+
+.nav-tabs {
+    height: 100%;
+    background-color: #98BC5E;
+}
+
+.nav {
+    height: 100%;
+    background-color: #98BC5E;
+}
+
+div.container::after {
+    display: none;
+}
+
+.btn-creth {
+    background-color: #3E6990;
+    color: white;
+}
+
+.current-user {
+    margin-top: 11px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.register-container{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";

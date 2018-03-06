@@ -36,7 +36,7 @@
     <%= form_group_tag(job.errors[:mulching]) do %>
         <%= f.label :mulching, "Do you need mulching?" %>
         <%= f.check_box :mulching, class: 'form-control' %>
-   <% end %>
+   <% end %><br><br>
    <p>If you didn't select the mulching option, you can ignore the questions below.</p>
     <%= form_group_tag(job.errors[:mulchexisting]) do %>
         <%= f.label :mulchexisting, "Do you already have a mulch bed?" %>

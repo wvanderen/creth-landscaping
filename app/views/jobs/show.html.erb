@@ -10,6 +10,19 @@
     <div class="col-md-8">
         <p>Address: <%= @job.address %></p>
         <p>Yard Size: <%= @job.yardsize %></p>
+        <p>Preferred Date: <%= @job.date %> </p>
+        <p>Special Requests: <%= @job.specialrequests %> </p>
+        <p>Stripes: <%= @job.stripes %> </p>
+        <p>Grass Treated: <%= @job.grasstreated %> </p>
+        <p>Mulching Requested: <%= @job.mulching %> </p>
+        <p>Mulch Existing: <%= @job.mulchexisting %> </p>
+        <p>New Bushes and Trees Requested: <%= @job.newbushestrees %> </p>
+        <p>Rate: <%= @job.rate %> </p>
+        <p>Job Status: <%= @job.status %> </p>
+        <p>Paid? <%= @job.paid %> </p>
+        <p>Staff Notes: <%= @job.notes %> </p>
+        
+              
         <p></p>
         
     </div>
@@ -17,7 +30,7 @@
 
 <div class="col-md-4">
     <% if user_is_authorized_for_edit?(@job) %>
-        <%= link_to "Edit", edit_wiki_path(@job), class: 'btn btn-success' %>
+        <%= link_to "Edit", edit_job_path(@job), class: 'btn btn-success' %>
     <% end %>
     <% if user_is_authorized_for_delete?(@job) %>
         <%= link_to "Delete", [@job], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this job'} %>
